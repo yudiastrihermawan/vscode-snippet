@@ -1,0 +1,194 @@
+{
+  "PHP trigger": {
+    "prefix": "php",
+    "body": ["<?php ${1:echo $0} ?>"],
+    "description": "CodeIgniter Controller"
+  },
+  "CodeIgniter Controller": {
+    "prefix": "controller",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "class ${TM_FILENAME/(.*)\\..+$/$1/} extends ${2:CI}_Controller {",
+      "",
+      "\tpublic function __construct() {",
+      "\t\tparent::__construct();",
+      "\t}",
+      "",
+      "\tpublic function index()",
+      "\t{",
+      "\t\t${0:# code...}",
+      "\t}",
+      "",
+      "}",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter Controller"
+  },
+  "CodeIgniter MY Controller": {
+    "prefix": "my_controller",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "class ${TM_FILENAME/(.*)\\..+$/$1/} extends ${2:MY}_Controller {",
+      "",
+      "\tpublic function __construct() {",
+      "\t\tparent::__construct();",
+      "\t}",
+      "",
+      "\tpublic function index()",
+      "\t{",
+      "\t\t${0:# code...}",
+      "\t}",
+      "",
+      "}",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter MY Controller"
+  },
+  "CodeIgniter Helper": {
+    "prefix": "helper",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "if ( ! function_exists('${1:foo}'))",
+      "{",
+      "\tfunction $1(${4:\\$${2:var} = '$3'})",
+      "\t{",
+      "\t\t${0:# code...}",
+      "\t}",
+      "}",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter Helper"
+  },
+  "CodeIgniter Library": {
+    "prefix": "library",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "class ${TM_FILENAME/(.*)\\..+$/$1/} {",
+      "",
+      "\tprotected \\$CI;",
+      "",
+      "\tpublic function __construct() {",
+      "\t\t\\$this->CI =& get_instance();",
+      "\t}",
+      "",
+      "\t${0:# code...}",
+      "",
+      "}",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter Model"
+  },
+  "CodeIgniter Model": {
+    "prefix": "model",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "class ${TM_FILENAME/(.*)\\..+$/$1/} extends ${1:CI}_Model {",
+      "",
+      "\t${3:protected \\$table = '$2';}",
+      "",
+      "\tpublic function __construct() {",
+      "\t\tparent::__construct();",
+      "\t}",
+      "",
+      "\t${0:# code...}",
+      "",
+      "}",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter Model"
+  },
+  "CodeIgniter MY Model": {
+    "prefix": "my_model",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "class ${TM_FILENAME/(.*)\\..+$/$1/} extends ${1:MY}_Model {",
+      "",
+      "\tpublic \\$_table = '${2}';",
+      "\tpublic \\$primary_key = '${3}';",
+      "\tpublic \\$return_type = 'object';",
+      "",
+      "\tpublic function __construct() {",
+      "\t\tparent::__construct();",
+      "\t}",
+      "",
+      "\t${0:# code...}",
+      "",
+      "}",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter MY Model"
+  },
+  "CodeIgniter Config": {
+    "prefix": "config",
+    "body": [
+      "<?php",
+      "defined('BASEPATH') OR exit('No direct script access allowed');",
+      "",
+      "\\$config['${1}'] = ${2};",
+      "",
+      "/* End of file: $TM_FILENAME */",
+      ""
+    ],
+    "description": "CodeIgniter Config"
+  },
+  "HTML If": {
+    "prefix": "hif",
+    "body": ["<?php if (${1}): ?>", "${0}", "<?php endif ?>"],
+    "description": "HTML If"
+  },
+  "HTML If Else": {
+    "prefix": "hifelse",
+    "body": [
+      "<?php if (${1}): ?>",
+      "${2}",
+      "<?php else: ?>",
+      "${0}",
+      "<?php endif ?>"
+    ],
+    "description": "HTML If Else"
+  },
+  "HTML Foreach": {
+    "prefix": "hforeach",
+    "body": ["<?php foreach (${1}): ?>", "${0}", "<?php endforeach ?>"],
+    "description": "HTML If"
+  },
+  "HTML Table Datatable": {
+    "prefix": "table_datatables",
+    "body": [
+      "<table class=\"table table-bordered\" id=\"${1}\" style=\"margin: 10px 0;\" data-url=\"<?php echo site_url('${0}'); ?>\">",
+      "<thead>",
+      "<th width=\"5%\">ID</th>",
+      "<th>Name</th>",
+      "<th width=\"15%\">#</th>",
+      "</thead>",
+      "<tbody>",
+      "</tbody>",
+      "</table>"
+    ],
+    "description": "HTML Table Datatable"
+  }
+}
