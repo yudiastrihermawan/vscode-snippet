@@ -1,0 +1,14 @@
+{
+  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "intelephense.diagnostics.undefinedProperties": false,
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "editor.wordWrap": "on",
+  "editor.insertSpaces": true
+}
