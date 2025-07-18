@@ -4,6 +4,7 @@
     "body": ["<?php ${1:echo $0} ?>"],
     "description": "CodeIgniter Controller"
   },
+
   "CodeIgniter Controller": {
     "prefix": "controller",
     "body": [
@@ -28,6 +29,7 @@
     ],
     "description": "CodeIgniter Controller"
   },
+
   "CodeIgniter MY Controller": {
     "prefix": "my_controller",
     "body": [
@@ -52,6 +54,7 @@
     ],
     "description": "CodeIgniter MY Controller"
   },
+
   "CodeIgniter Helper": {
     "prefix": "helper",
     "body": [
@@ -71,6 +74,7 @@
     ],
     "description": "CodeIgniter Helper"
   },
+
   "CodeIgniter Library": {
     "prefix": "library",
     "body": [
@@ -94,6 +98,7 @@
     ],
     "description": "CodeIgniter Model"
   },
+
   "CodeIgniter Model": {
     "prefix": "model",
     "body": [
@@ -117,6 +122,7 @@
     ],
     "description": "CodeIgniter Model"
   },
+
   "CodeIgniter MY Model": {
     "prefix": "my_model",
     "body": [
@@ -142,6 +148,7 @@
     ],
     "description": "CodeIgniter MY Model"
   },
+
   "CodeIgniter Config": {
     "prefix": "config",
     "body": [
@@ -155,11 +162,13 @@
     ],
     "description": "CodeIgniter Config"
   },
+
   "HTML If": {
     "prefix": "hif",
     "body": ["<?php if (${1}): ?>", "${0}", "<?php endif ?>"],
     "description": "HTML If"
   },
+
   "HTML If Else": {
     "prefix": "hifelse",
     "body": [
@@ -171,11 +180,35 @@
     ],
     "description": "HTML If Else"
   },
+
   "HTML Foreach": {
     "prefix": "hforeach",
     "body": ["<?php foreach (${1}): ?>", "${0}", "<?php endforeach ?>"],
     "description": "HTML If"
   },
+
+  "HTML Template": {
+    "prefix": "htemplate",
+    "body": [
+      "<?php \\$this->load->view('template/app/header_view'); ?>",
+      "",
+      "<?php \\$this->load->view('template/app/navbar_view'); ?>",
+      "<div class=\"container\">",
+      "<div class=\"row\">",
+      "<div class=\"col-xs-${1} col-sm-${2} col-md-${3} col-lg-${3}\">",
+      "${0}",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<?php \\$this->load->view('template/app/footer_view'); ?>",
+      "",
+      "<script type=\"text/javascript\">",
+      "",
+      "</script>"
+    ],
+    "description": "HTML If"
+  },
+
   "HTML Table Datatable": {
     "prefix": "table_datatables",
     "body": [
@@ -190,5 +223,112 @@
       "</table>"
     ],
     "description": "HTML Table Datatable"
+  },
+
+  "HTML Form Input Text": {
+    "prefix": "form_text",
+    "body": [
+      "<div class=\"form-group${1}\">",
+      "<label for=\"${0}\">${2}</label>",
+      "<input type=\"text\" ${0}=\"${0}\" id=\"${0}\" class=\"form-control\" autocomplete=\"off\">",
+      "<div id=\"error-${0}\" class=\"help-block text-danger\"></div>",
+      "</div>"
+    ],
+    "description": "HTML Form Input Text"
+  },
+
+  "HTML Form Input Select": {
+    "prefix": "form_select",
+    "body": [
+      "<div class=\"form-group${1}\">",
+      "<label for=\"${0}\">${2}</label>",
+      "<select name=\"${0}\" id=\"${0}\" class=\"form-control\">",
+      "<option value=\"\"></option>",
+      "<?php foreach (\\$arr_${0} as \\$${0}): ?>",
+      "<option value=\"<?php echo \\$${0} ?>\"><?php echo \\$${0} ?></option>",
+      "<?php endforeach ?>",
+      "</select>",
+      "<span id=\"error-${0}\" class=\"help-block text-danger\"></span>",
+      "</div>"
+    ],
+    "description": "HTML Form Input Select"
+  },
+
+  "HTML Form Input File": {
+    "prefix": "form_file",
+    "body": [
+      "<div class=\"form-group${1}\">",
+      "<label for=\"${0}\">${2}</label>",
+      "<input type=\"file\" name=\"${0}\" id=\"${0}\" class=\"form-control\">",
+      "<span id=\"error-${0}\" class=\"help-block text-danger\"></span>",
+      "</div>"
+    ],
+    "description": "HTML Form Input File"
+  },
+
+  "HTML Form Input hidden": {
+    "prefix": "form_hidden",
+    "body": ["<input type=\"hidden\" name=\"${0}\" id=\"${0}\">"],
+    "description": "HTML Form Input hidden"
+  },
+
+  "HTML Form Button Add": {
+    "prefix": "btn_add",
+    "body": [
+      "<button id=\"btn-${1}\" class=\"btn btn-primary\"><i class=\"fa-solid fa-plus\"></i> ${2}</button>",
+      "${0}"
+    ],
+    "description": "HTML Form Button Add"
+  },
+
+  "HTML Form Button Edit": {
+    "prefix": "btn_edit",
+    "body": [
+      "<button class=\"btn btn-primary${1}\" data-id=\"<?php echo ${2} ?>\"><i class=\"fa-solid fa-pen\"></i> ${0}</button>"
+    ],
+    "description": "HTML Form Button Edit"
+  },
+
+  "HTML Form Button Save": {
+    "prefix": "btn_save",
+    "body": [
+      "<button type=\"submit\" id=\"btn-${1}\" class=\"btn btn-primary\"><i class=\"fa-solid fa-floppy-disk\"></i> ${0}</button>"
+    ],
+    "description": "HTML Form Button Save"
+  },
+
+  "HTML Form Button Delete": {
+    "prefix": "btn_delete",
+    "body": [
+      "<button class=\"btn btn-danger${1}\" data-id=\"<?php echo ${2} ?>\"><i class=\"fa-solid fa-trash\"></i> ${0}</button>"
+    ],
+    "description": "HTML Form Button delete"
+  },
+
+  "HTML Modal Form": {
+    "prefix": "modal_form",
+    "body": [
+      "<div class=\"modal fade\" id=\"modal-${0}\">",
+      "<div class=\"modal-dialog\">",
+      "<div class=\"modal-content\">",
+      "<form action=\"\" name=\"form-${0}\" id=\"form-${0}\" method=\"post\" enctype=\"multipart/form-data\" accept-charset=\"utf-8\">",
+      "<div class=\"modal-header\">",
+      "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>",
+      "<h4 class=\"modal-title\" id=\"title\"></h4>",
+      "</div>",
+      "<div class=\"modal-body\">",
+      "",
+      "</div>",
+      "<div class=\"modal-footer\">",
+      "<input type=\"hidden\" name=\"${0}_id\" id=\"${0}_id\">",
+      "<button type=\"submit\" id=\"btn-simpan\" class=\"btn btn-primary\"><i class=\"fa-solid fa-floppy-disk\"></i> Simpan</button>",
+      "<button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"><i class=\"fa-solid fa-times\"></i> Tutup</button>",
+      "</div>",
+      "</form>",
+      "</div>",
+      "</div>",
+      "</div>"
+    ],
+    "description": "HTML Modal Form"
   }
 }
